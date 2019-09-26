@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  discount: 1.5
+  min_order: 1
+  max_discount: 1
+  status: false
+
+two:
+  name: MyString
+  discount: 1.5
+  min_order: 1
+  max_discount: 1
+  status: false
