@@ -1,0 +1,31 @@
+<h1>Grab Promo Calculator</h1>
+
+<%= form_for :promo do |f| %>
+  <div>
+    <%= f.label :title, "Pilih Promo" %><br>
+    <%= collection_select(:promos, :promos_id, Promo.all, :id, :name, {:selected => Promo.first}) %>
+  </div>
+  <div>
+    <%= f.label :title, "Jumlah Customer" %><br>
+    <%= number_field(:quantity, :amount, in: 1..20, step: 1, :value => 1) %>
+  </div>
+  <div>
+    <#% TODO: 1. Make customer input to be dynamic based on 'Jumlah Customer' input %>
+    <#%       2. Convert string to integer for 'Harga' and 'Ongkir' input %>
+    <div>
+      <%= f.label :title, "Customer 1" %><br>
+      <%= text_field(:customer, :name) %>
+    </div>
+    <div>
+      <%= f.label :title, "Harga" %><br>
+      <%= text_field(:price, :total) %>
+    </div>
+    <div>
+      <%= f.label :title, "Ongkos Kirim" %><br>
+      <%= text_field(:delivery, :delivery_price) %>
+    </div>
+  </div>
+  <div>
+    <%= f.submit "Hitung Pesanan" %>
+  </div>
+<% end %>
